@@ -63,7 +63,6 @@ http://localhost:3000/
 ## Screenshots
 
 ![Screenshot of Waste Object Classification](screenshots/Screenshot1.png)
-![Screenshot of Waste Object Classification](screenshots/Screenshot2.png)
 ![Screenshot of Waste Object Classification](screenshots/Screenshot3.png)
 ![Screenshot of Waste Object Classification](screenshots/Screenshot5.png)
 ![Screenshot of Waste Object Classification](screenshots/Screenshot4.png)
