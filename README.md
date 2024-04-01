@@ -33,7 +33,7 @@ cd backend
 ```
 3. Install required libraries : (Only for initial setup)
 ```bash
-pip install -r requirements. txt
+pip install -r requirements.txt
 ```
 3. Run the application:
 ```bash
