@@ -81,7 +81,7 @@ http://localhost:3000/
 
 ## Demo Video:
 
-Check out our demo video: [Demo Video](https://www.youtube.com/watch?v=your_video_id)
+Check out our demo video:
 ![Demo Video](backend/output_smartphone.mp4)
 
 ## Screenshots
