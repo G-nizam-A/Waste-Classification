@@ -33,7 +33,7 @@ cd backend
 ```
 3. Install required libraries : (Only for initial setup)
 ```bash
-pip install -r requirements. txt
+pip install -r requirements.txt
 ```
 3. Run the application:
 ```bash
@@ -60,13 +60,34 @@ npm start
 http://localhost:3000/
 ```
 
+## Setup instructions for Real-Time Detection:
+
+1. Download and install the IP Webcam app on your mobile device from the [Google Play Store](https://play.google.com/store/apps/details?id=com.pas.webcam)
+   
+2. Ensure that both your system and mobile device are connected to the same network. This is necessary for communication between the devices.
+   
+3. After installing the IP Webcam app on your mobile device, open the app and start the server. Once the server is running, you'll see an IPv4 address displayed on the app's interface. Copy this address.
+
+![image](https://github.com/G-nizam-A/Waste-Classification/assets/109983860/606988c4-e8f2-49ec-b49c-212238303fb3)
+
+4. In the project directory, locate the `.env` file and paste the address to `IPV4URL`.
+   ```bash
+    IPV4URL=http://192.168.0.102:8080 [paste your IPv4 address here]
+    ```
+4. Click on START to run real time detection.
+   ![Screenshot of Waste Object Classification](screenshots/Screenshot6.png)
+   
+5. Run the project `main.py` and click on the "START" button to initiate real-time waste object detection and classification. You should see the live feed from your mobile device's camera, and the system will start identifying and classifying waste objects in real-time.
+
+
 ## Screenshots
 
 ![Screenshot of Waste Object Classification](screenshots/Screenshot1.png)
+![Screenshot of Waste Object Classification](screenshots/Screenshot2.png)
 ![Screenshot of Waste Object Classification](screenshots/Screenshot3.png)
 ![Screenshot of Waste Object Classification](screenshots/Screenshot4.png)
 ![Screenshot of Waste Object Classification](screenshots/Screenshot5.png)
-
+![Screenshot of Waste Object Classification](screenshots/Screenshot7.png)
 
 ## Contribution
 

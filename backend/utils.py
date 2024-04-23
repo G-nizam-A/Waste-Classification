@@ -44,7 +44,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 def preprocessing_input(img_path):
     # img = image.load_img(img_path, target_size=(224, 224))
-    img = image.load_img(img_path, target_size=(384, 384))
+    # img = image.load_img(img_path, target_size=(384, 384))
     img = image.load_img(img_path, target_size=(400, 400))
     img = image.img_to_array(img)
     img = np.expand_dims(img, axis=0)

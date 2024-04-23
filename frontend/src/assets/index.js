@@ -13,5 +13,6 @@ import shoes from './organic.png';
 import clothes from './plastic.png';
 import biological from './organic.png';
 import camera from './camera.svg';
+import menu from './menu.svg';
 
-export { Upload, Logo, Earth, glass, metal, paper, plastic, organic, battery, cardboard, shoes, trash, camera, biological, clothes};
+export { Upload, Logo, Earth, glass, metal, paper, plastic, organic, battery, cardboard, shoes, trash, camera, biological, clothes,menu};

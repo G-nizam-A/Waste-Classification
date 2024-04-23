@@ -17,9 +17,14 @@ module.exports = {
           '75%': { width: '75%' },
           '100%': { width: '100%' },
         },
+        spin360: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         loaders: 'loader 2s ease-in-out infinite',
+        spin_360: 'spin360 1.5s linear  infinite',
       },
       spacing: {
         85: '21.25rem',

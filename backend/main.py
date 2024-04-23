@@ -1,13 +1,27 @@
-from fastapi import FastAPI, UploadFile, File
+import threading
+from fastapi import FastAPI, UploadFile, File, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from pathlib import Path
 from utils import predict, input_trash
+from real_time_detection_faster_rcnn import real_time_processing
 import time
 import uvicorn
 import shutil
 import os
+from dotenv import load_dotenv
+import urllib.error
+
+load_dotenv()  # Loads environment variables from the .env file
+
+# Ensure the environment variable 'IPV4URL' is defined
+IPV4URL = os.getenv('IPV4URL')  # Fetch the value from the environment variable
+
+if IPV4URL is None:
+    # Handle the case where 'IPV4URL' is not defined
+    raise ValueError("Environment variable 'IPV4URL' is not defined")
+
 
 origins = [ 
     "http://localhost:8000", 
@@ -21,7 +35,7 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"]
 )
@@ -86,6 +100,55 @@ async def predict_endpoint(file: UploadFile = File(...)):
         "predicted_accuracy": predicted_accuracy,
         "advice": get_advice,
     }
+
+
+# Global flag to control the background process
+is_running = False
+# Define a global stop event
+stop_event = threading.Event()
+
+@app.post("/real-time")
+async def start_real_time(background_tasks: BackgroundTasks):
+    global is_running, status
+    if is_running:  # Check if already running
+        print('run is_running')
+        return {"message": "Real-time processing already running",
+                "status": status}
+    
+    url = IPV4URL+'/shot.jpg'
+    try:
+        urllib.request.urlopen(url)
+
+        if stop_event.is_set():
+            print('run stop_event')
+
+            stop_event.clear()  # Reset stop event to allow restarting
+        is_running = True
+        background_tasks.add_task(real_time_processing, stop_event, url)  # Start background processing
+        status = True
+
+    except (urllib.error.URLError, urllib.error.HTTPError) as e:
+        print(f"Network error: {e}")
+        status = False
+
+    return {"message": "Real-time processing started",
+            "status": status}
+
+@app.post("/stop-real-time")
+async def stop_real_time():
+    global is_running
+    if not is_running:
+        print('stop is_running')
+
+        return {"message": "Real-time processing not running"}
+    
+    is_running = False
+    if not stop_event.is_set():  # Ensure event isn't already set
+        print('stop stop_event')
+
+        stop_event.set()  # Signal to stop background processing
+    return {"message": "Real-time processing stopped"}
+
 
 if __name__ == "__main__":
     uvicorn.run(

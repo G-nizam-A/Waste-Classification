@@ -11,7 +11,7 @@ const Form = ({ setImage, setIsPending, setUrl, setColor, setError, setPredict, 
 
     const formData = new FormData();
     formData.append('file', image);
-
+ 
     try {
       const response = await axios.post(`http://localhost:8000/predict`, formData, {
         headers: { 'Content-Type': 'multipart/form-data', },
@@ -26,8 +26,8 @@ const Form = ({ setImage, setIsPending, setUrl, setColor, setError, setPredict, 
 
       setUrl(data.path);
 
-      console.log('Advice:', data.advice.advice);
-      console.log('Time:', data.advice.time);
+      // console.log('Advice:', data.advice.advice);
+      // console.log('Time:', data.advice.time);
 
       setPredict(data.predicted_value);
       setAccuracy(data.predicted_accuracy);
