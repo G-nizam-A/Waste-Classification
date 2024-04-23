@@ -60,6 +60,21 @@ npm start
 http://localhost:3000/
 ```
 
+## For Real-Timr Detection:
+
+1. Install IP-Webcam [Download](https://play.google.com/store/apps/details?id=com.pas.webcam)
+   
+2. Connect your system and mobile device with same network.
+   
+   ![image](https://github.com/G-nizam-A/Waste-Classification/assets/109983860/606988c4-e8f2-49ec-b49c-212238303fb3)
+   
+3. Copy the IPv4 address and paste it on the .env file.
+   ```bash
+    IPV4URL=http://192.168.0.102:8080 [paste your IPv4 address here]
+    ```
+4. Click on START to run real time detection.
+   ![Screenshot of Waste Object Classification](screenshots/Screenshot6.png)
+   
 ## Screenshots
 
 ![Screenshot of Waste Object Classification](screenshots/Screenshot1.png)
