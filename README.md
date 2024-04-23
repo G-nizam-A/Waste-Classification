@@ -75,19 +75,23 @@ http://localhost:3000/
     IPV4URL=http://192.168.0.102:8080 [paste your IPv4 address here]
     ```
 4. Click on START to run real time detection.
-   ![Screenshot of Waste Object Classification](screenshots/Screenshot6.png)
+   ![Screenshot of Waste Object Classification](screenshots/Screenshot-6.png)
    
 5. Run the project `main.py` and click on the "START" button to initiate real-time waste object detection and classification. You should see the live feed from your mobile device's camera, and the system will start identifying and classifying waste objects in real-time.
 
+## Demo Video:
+
+Check out our demo video: [Demo Video](https://www.youtube.com/watch?v=your_video_id)
+![Demo Video](backend/output_smartphone.mp4)
 
 ## Screenshots
 
-![Screenshot of Waste Object Classification](screenshots/Screenshot1.png)
-![Screenshot of Waste Object Classification](screenshots/Screenshot2.png)
-![Screenshot of Waste Object Classification](screenshots/Screenshot3.png)
-![Screenshot of Waste Object Classification](screenshots/Screenshot4.png)
-![Screenshot of Waste Object Classification](screenshots/Screenshot5.png)
-![Screenshot of Waste Object Classification](screenshots/Screenshot7.png)
+![Screenshot of Waste Object Classification](screenshots/Screenshot-1.png)
+![Screenshot of Waste Object Classification](screenshots/Screenshot-2.png)
+![Screenshot of Waste Object Classification](screenshots/Screenshot-3.png)
+![Screenshot of Waste Object Classification](screenshots/Screenshot-4.png)
+![Screenshot of Waste Object Classification](screenshots/Screenshot-5.png)
+![Screenshot of Waste Object Classification](screenshots/Screenshot-7.png)
 
 ## Contribution
 
