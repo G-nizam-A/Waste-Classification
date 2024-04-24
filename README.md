@@ -68,7 +68,7 @@ http://localhost:3000/
    
 3. After installing the IP Webcam app on your mobile device, open the app and start the server. Once the server is running, you'll see an IPv4 address displayed on the app's interface. Copy this address.
 
-![image](https://github.com/G-nizam-A/Waste-Classification/assets/109983860/606988c4-e8f2-49ec-b49c-212238303fb3)
+   ![image](https://github.com/G-nizam-A/Waste-Classification/assets/109983860/606988c4-e8f2-49ec-b49c-212238303fb3)
 
 4. In the project directory, locate the `.env` file and paste the address to `IPV4URL`.
    ```bash
